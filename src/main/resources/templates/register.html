@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="~{layout/layout :: head}"></head>
+
+<body class="bg-slate-800 flex flex-col justify-center items-center h-screen w-screen">
+<div
+        class="relative bg-slate-900 p-10 rounded-xl w-3/5 h-[80vh] flex flex-col gap-4
+         text-white text-center shadow-xl shadow-sky-800 overflow-y-auto mt-10">
+
+  <header class="text-3xl">
+    <h1>[[${title}]]</h1>
+  </header>
+  <div>
+    <form th:action="@{/register}" th:object="${usuario}" method="post" class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 text-start">
+        <label for="nombresUsuario" class="text-lg">Nombres</label>
+        <input type="text"
+               class="bg-transparent py-2 outline-none border-b border-sky-400 focus:border-sky-500
+               transition-all focus:scale-105 focus:font-normal"
+               id="nombresUsuario" placeholder="Ingrese sus nombres" name="nombresUsuario"
+               th:field="*{nombreUsuario}"
+               required="true">
+        <small class="text-sm text-slate-700">Nunca compartiremos tu información con nadie.</small>
+      </div>
+
+      <div class="flex flex-col gap-4 text-start">
+        <label for="apellidosUsuario" class="text-lg">Apellidos</label>
+        <input type="text"
+               class="bg-transparent py-2 outline-none border-b border-sky-400 focus:border-sky-500 transition-all focus:scale-105 focus:font-normal"
+               id="apellidosUsuario" placeholder="Ingrese sus apellidos" name="apellidosUsuario"
+               th:field="*{apellidoUsuario}"
+               required="true">
+        <small class="text-sm text-slate-700">Nunca compartiremos tu información con nadie.</small>
+      </div>
+
+      <div class="flex flex-col gap-4 text-start">
+        <label for="telefonoUsu" class="text-lg">País de Origen</label>
+        <input type="text"
+               class="bg-transparent py-2 outline-none border-b border-sky-400 focus:border-sky-500 transition-all focus:scale-105 focus:font-normal"
+               id="telefonoUsu" placeholder="Ingrese su País de origen" name="telefonoUsu" th:field="*{paisUsuario}">
+        <small class="text-sm text-slate-700">Ingrese el teléfono</small>
+      </div>
+
+      <div class="flex flex-col gap-4 text-start">
+        <label for="correoUsuario" class="text-lg">Correo electrónico </label>
+        <input type="text" class="bg-transparent py-2 outline-none border-b border-sky-400
+        focus:border-sky-500 transition-all focus:scale-105 focus:font-normal"
+               id="correoUsuario" aria-describedby="emailHelp" placeholder="Ingrese su correo"
+               name="correoUsuario" th:field="*{emailUsuario}" required="true">
+        <small class="text-sm text-slate-700">Nunca compartiremos tu información con nadie.</small>
+      </div>
+
+      <div class="flex flex-col gap-4 text-start">
+        <label for="claveUsuario" class="text-lg">Contraseña</label>
+        <input type="password"
+               class="bg-transparent py-2 outline-none border-b border-sky-400
+        focus:border-sky-500 transition-all focus:scale-105 focus:font-normal"
+               id="claveUsuario" placeholder="Ingrese su contraseña" name="claveUsuario" th:field="*{claveUsuario}">
+        <small class="text-sm text-slate-700">Nunca compartiremos tu información con nadie.</small>
+      </div>
+
+
+      <div class="flex flex-col gap-4 text-start">
+        <label for="confirmarClave" class="text-lg">Confirmar Contraseña</label>
+        <input type="password"
+               class="bg-transparent py-2 outline-none border-b border-sky-400 focus:border-sky-500
+               transition-all focus:scale-105 focus:font-normal"
+               id="confirmarClave" placeholder="Confirme su contraseña" name="confirmarClave">
+        <small class="text-sm text-slate-700">Confirme su contraseña.</small>
+      </div>
+
+      <button type="submit" class="border border-slate-300 py-3 px-4 rounded hover:bg-white
+      hover:text-slate-800 transition-all active:scale-105 font-bold text-lg text-white">REGISTRAR
+      </button>
+    </form>
+
+  </div>
+
+</div>
+
+<footer class="relative" th:replace="~{layout/layout :: footer}"></footer>
+</body>
+
+</html>

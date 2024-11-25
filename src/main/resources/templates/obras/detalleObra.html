@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{layout/layout :: head}"></head>
+<body class="bg-cyan-800 text-white flex flex-col justify-center items-center h-screen w-screen">
+<div th:replace="~{layout/layout :: fondo}"></div>
+<header class="relative" th:replace="~{layout/layout :: header}"></header>
+
+<section class="w-full h-full flex flex-col justify-center items-center gap-4 p-4 text-white pt-32">
+  <h1 class="text-3xl font-bold uppercase mb-6">[[${title}]]</h1>
+
+  <div th:style="'background-image: url(' + ${detalleObra.fotoObra} + '); background-repeat: no-repeat;
+     background-size:cover; background-position: center; text-shadow: 0 0 10px #423f3f;'"
+       class="w-full h-full p-8 text-2xl bg-cyan-100 rounded font-semibold gap-4 text-center flex flex-col
+          justify-center items-center">
+
+    <div class="bg-cyan-100 bg-opacity-60 p-6 rounded-lg text-black w-full max-w-2xl">
+
+      <h1 class="text-3xl font-bold uppercase">[[${detalleObra.tituloObra}]]</h1>
+      <br>
+      <h2><span class="font-bold">Descripción de la obra:</span> [[${detalleObra.descripcionObra}]]</h2>
+      <h2><span class="font-bold">Fecha de Creación: </span>[[${detalleObra.fechaCreacion}]]</h2>
+      <h2><span class="font-bold">Técnica: </span>[[${detalleObra.tecnicaObra}]]</h2>
+
+
+      <h2><span class="font-bold">Artista(s):</span>
+        <ul>
+          <li th:each="artista:${detalleObra.artistas}" th:text="${artista.nombreArt + ' ' + artista.apellidoArt}">
+          </li>
+        </ul>
+      </h2>
+    </div>
+  </div>
+  <br>
+  <footer class="relative" th:replace="~{layout/layout :: footer}"></footer>
+</section>
+</body>
+</html>

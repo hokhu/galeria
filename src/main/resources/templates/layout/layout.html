@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragment="head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale">
+  <link rel="stylesheet"th:href="@{/css/style.css}">
+  <link rel="shortcut.icon" th:href="@{/img/icon.png}"type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>[[${title}]]</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-white flex justify-center items-center h-screen w-screen"
+      th:style=" 'background-image:url('+@{/img/background.jpg}+');
+       'background-size: cover;background-position: center;backdrop-filter:blur(2px)'">
+
+<header th:fragment="header">
+  <nav class="absolute top-0 left-0 right-0 flex justify-between bg-slate-900
+          py-4 px-20 w-screen h-[70px]">
+    <div class="w-full h-full flex items-center text-md font-bold text-white">
+      <a th:href="@{/}"
+         class="bg-slate-900 rounded-xl px-2 flex items-center
+            h-full gap-2 shadow-md shadow-slate-900">
+        <img src="/img/icon.png" alt="" class="h-full">
+        <span>Home</span>
+      </a>
+    </div>
+    <ul class="flex gap-12 py-2 justify-between w-full h-full list-disc" sec:authorize="isAuthenticated()">
+
+      <li class="hover:text-white hover:underline transition-all
+             underline-offset-4">
+        <a th:href="@{/obras}"> OBRAS</a>
+      </li>
+      <li class="hover:text-white hover:underline transition-all
+             underline-offset-4">
+        <a th:href="@{/artistas}"> ARTISTAS</a>
+      </li>
+      <li class="hover:text-white hover:underline transition-all
+             underline-offset-4" >
+
+        <a th:href="@{/exposiciones}"> EXPOSICIONES</a>
+      </li>
+    </ul>
+    <ul class="flex gap-4 w-full justify-end">
+      <li class="border-2 bg-white text-slate-900 px-2 py-1 rounded hover:bg-slate-900 hover:text-white
+                text-center active:scale-105 p-4 transition-all hover:cursor-pointer hover:ring-2 " sec:authorize="isAnonymous()">
+        <a th:href="@{/register}">REGISTRAR</a>
+      </li>
+
+      <li class="border-2 border-white px-2 py-1 rounded
+                 bg-white text-slate-900 text-center
+                 transition-all active:scale-105 p-4 hover:cursor-pointer hover:ring-2" sec:authorize="isAnonymous()">
+        <a th:href="@{/login}">Iniciar Sesión</a>
+      </li>
+
+      <li class="border-2 border-white px-2 py-1 rounded
+                 bg-white text-slate-900 text-center
+                 transition-all active:scale-105 p-4 hover:cursor-pointer hover:ring-2" sec:authorize="isAuthenticated()">
+        <form th:action="@{/logout}" method="post">
+          <a class="nav-list l-login" onclick="this.parentNode.submit();"href="#">Cerrar Sesión</a>
+        </form>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+<!--Fin del encabezado -banner-->
+Agregar nuevo registro
+
+<div th:fragment="nuevo" class="absolute top-[70px] left-0 right-0 flex justify-between bg-line-600 py-4 px-20 w-screen h-[50px]" sec:authorize="hasRole('ADMINISTRADOR')">
+  <ul class="w-full flex justify-end items-center">
+    <li class="hover:cursor-pointer flex gap-4 p-2 border border-white rounder-xxl hover:bg-white hover:text-slate-900 text-sn active:scale-105 transition-all">
+      <a th:href="@{${urlRegistro}}">Agregar nuevo registro</a>
+    </li>
+  </ul>
+</div>
+fin del registro registro
+
+<!--fondo -->
+<div th:fragment="fondo" class="absolute top-0 z-[-2] h-screen w-screen bg-slate-900
+bd-[radial-gradiente(ellipse_80%_80%_at_50%_-20%,rbga(140,119,198,0.3),
+rbga(255,255,255,0))]">
+</div>
+
+<footer th:fragment="footer">
+  <div class="text-center text-slate-500 absolute bottom-0 left-0 right-0">
+    &copy; 2024. Casi todos los derechos reservados
+  </div>
+</footer>
+</body>
+</html>

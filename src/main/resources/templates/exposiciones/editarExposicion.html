@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/layout :: head}"></head>
+<body class="bg-zinc-400 text-white flex justify-center items-center h-screen w-screen">
+<div th:replace="~{layout/layout :: fondo}"></div>
+<header th:replace="~{layout/layout :: header}"></header>
+<section class="w-screen h-screen flex flex-col justify-center items-center gap-y-4 p-4 text-bg-white pt-32">
+    <h1 class="text-3xl font-bold uppercase mb-6">[[${title}]]</h1>
+    <div class="overflow-y-scroll w-3/5 m-5 p-8">
+
+        <!-- Formulario de actualización -->
+        <form th:object="${expoEdit}" th:action="@{/editarExposicion/{id}(id=${expoEdit.idExposicion})}" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:field="*{idExposicion}"/>
+
+            <!-- Título de la Exposición -->
+            <div class="flex flex-col gap-2 text-start">
+                <label style="font-size:20px; font-family: 'Comic Sans MS', serif" class="text-lg font-bold" for="tituloE">Título *:</label>
+                <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
+                       type="text" name="tituloE" id="tituloE" th:field="*{tituloExp}" required="true"/>
+                <small class="text-bg-white">Digite el título de la exposición</small>
+            </div>
+
+            <br>
+            <!-- Fecha de Inicio -->
+            <div class="flex flex-col gap-2 text-start">
+                <label style="font-size:20px; font-family: 'Comic Sans MS',Serif" class="text-lg font-bold" for="fechaI">Fecha de Inicio*:</label>
+                <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
+                       type="date" name="fechaI" id="fechaI" th:field="*{fechaInicio}" required="true"/>
+                <small class="text-bg-white">Digite la fecha de Inicio</small>
+            </div>
+
+            <script>
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById("fechaI").setAttribute("max", today)
+            </script>
+
+            <br>
+            <!-- Fecha de Fin -->
+            <div class="flex flex-col gap-2 text-start">
+                <label style="font-size:20px; font-family: 'Comic Sans MS',Serif" class="text-lg font-bold" for="fechaF">Fecha de Fin*:</label>
+                <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
+                       type="date" name="fechaF" id="fechaF" th:field="*{fechaFin}" required="true"/>
+                <small class="text-bg-white">Digite la fecha Fin</small>
+            </div>
+
+            <script>
+                const today2 = new Date().toISOString().split('T')[0];
+                document.getElementById("fechaF").setAttribute("max", today2)
+            </script>
+
+            <br>
+            <!-- Ubicación -->
+            <div class="flex flex-col gap-2 text-start">
+                <label style="font-size:20px; font-family: 'Comic Sans MS',Serif" class="text-lg font-bold" for="ubicacionE">Ubicación Exposición*:</label>
+                <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
+                       type="text" name="ubicacionE" id="ubicacionE" th:field="*{ubicacionExp}" required="true"/>
+                <small class="text-bg-white">Digite la Ubicación de la Exposición</small>
+            </div>
+
+            <br>
+            <!-- Artistas -->
+            <div class="flex flex-col gap-2 text-start">
+                <label style="font-size: 20px; font-family: 'Comic Sans MS', serif" class="text-lg font-bold" for="artistas"> Seleccionar Artistas: </label>
+                <select class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
+                        id="artistas" name="artistas" th:field="*{artistas}" multiple="multiple">
+                    <option th:each="artista: ${listaArtista}"
+                            th:value="${artista.idArtista}"
+                            th:text="${artista.nombreArt} + ' ' + ${artista.apellidoArt}"
+                            th:selected="${expoEdit.artistas.contains(artista)}">
+                    </option>
+                </select>
+                <small class="text-bg-white">Selecciona uno o varios artistas para la exposición</small>
+            </div>
+
+            <br>
+            <!-- Botón de Enviar -->
+            <div class="flex flex-col justify-center items-center mb-4">
+                <button class="border border-orange-600 py-2 px-4
+                    rounded bg-orange-200 hover:bg-orange-600
+                    hover:text-black transition-all active:scale-105
+                    font-bold text-lg text-black"
+                        type="submit">Actualizar Exposición</button>
+            </div>
+        </form>
+    </div>
+</section>
+<footer class="relative" th:replace="~{layout/layout ::footer}"></footer>
+</body>
+</html>
