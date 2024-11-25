@@ -11,7 +11,7 @@
       <input type="hidden" th:field="*{idObra}"/>
 
       <div class="flex flex-col gap-2 text-start">
-        <label style="font-size:20px; font-family: 'Comic Sans MS', serif" class="text-lg font-bold" for="tituloO">Título *:</label>
+        <label style="font-size:20px; font-family: serif" class="text-lg font-bold" for="tituloO">Título *:</label>
         <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
                type="text" name="tituloO" id="tituloO" th:field="*{tituloObra}" required="true"/>
         <small class="text-bg-white">Digite el título de la obra</small>
@@ -19,7 +19,7 @@
       <!--***************************************************************************--->
       <br>
       <div class="flex flex-col gap-2 text-start">
-        <label style="font-size:20px; font-family: 'Comic Sans MS',Serif"
+        <label style="font-size:20px; font-family:Serif"
                class="text-lg font-bold" for="fechaO">Fecha de Creación*:</label>
         <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200
                 transition-all focus:scale-105 focus:font-normal" type="date" name="fechaO" id="fechaO"
@@ -33,7 +33,7 @@
       <!--***************************************************************************--->
       <br>
       <div class="flex flex-col gap-2 text-start">
-        <label style="font-size:20px; font-family: 'Comic Sans MS',Serif"
+        <label style="font-size:20px; font-family:Serif"
                class="text-lg font-bold" for="descripcionO">Descripción de la Obra*:</label>
         <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200
                 transition-all focus:scale-105 focus:font-normal" type="text" name="descripcionO" id="descripcionO"
@@ -44,7 +44,7 @@
       <!--***************************************************************************--->
       <br>
       <div class="flex flex-col gap-2 text-start">
-        <label style="font-size:20px; font-family: 'Comic Sans MS', serif"
+        <label style="font-size:20px; font-family:serif"
                class="text-lg font-bold" for="tecnicaO">Tecnica de la Obra*:</label>
         <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200
                 transition-all focus:scale-105 focus:font-normal" type="text" name="tecnicaO" id="tecnicaO"
@@ -56,7 +56,7 @@
       <!--*************************************AGREGAR LISTA ARTISTAS*****************************************--->
       <br>
       <div class="flex flex-col gap-2 text.start">
-        <label style="font-size: 20px;font-family: 'Comic Sans MS', serif"
+        <label style="font-size: 20px;font-family:serif"
                class="text-lg font-bold" for="artistas"> Seleccionar Artistas: </label>
         <select class="bg-transparent py-1 border-b border-sky-300 focus: border-sky-200 transition-all
                 focus:scale-105 focus:font-normal" id="artistas" name="artistas" th:field="*{artistas}" multiple="multiple">
@@ -75,7 +75,7 @@
       <!--***************************************************************************************************--->
       <br>
       <div class="flex flex-col gap-2 text-start">
-        <label style="font-size:20px; font-family: 'Comic Sans MS', serif"
+        <label style="font-size:20px; font-family:serif"
                class="text-lg font-bold" for="foto">Foto de la obra *:</label>
         <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200
                 transition-all focus:scale-105 focus:font-normal"
@@ -93,10 +93,10 @@
 
       <br>
       <div class="flex flex-col justify-center items-center mb-4">
-        <input class="border border orange-600 py2 px-4
-            rounded bg-orange-200 hover:bg-orange-600
-            hover:text-black transition-all active:scale-105
-            font-bolt text-lb text-black m-auto"
+        <input class="border border slate-900 py2 px-4
+            rounded bg-slate-900 hover:bg-white
+            hover:text-slate-900 transition-all active:scale-105
+            font-bolt text-lb text-white m-auto"
                type="submit" value="Actualizar Obra "/>
       </div>
     </form>

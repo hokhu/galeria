@@ -32,7 +32,7 @@
         <a th:href="@{/obras}"> OBRAS</a>
       </li>
       <li class="hover:text-white hover:underline transition-all
-             underline-offset-4">
+             underline-offset-4" sec:authorize="hasAnyRole('ADMINISTRADOR')">
         <a th:href="@{/artistas}"> ARTISTAS</a>
       </li>
       <li class="hover:text-white hover:underline transition-all

@@ -1,19 +1,27 @@
 package com.usta.galeria.Controllers;
 
 import com.usta.galeria.Entities.ArtistaEntity;
+import com.usta.galeria.Entities.ObraEntity;
 import com.usta.galeria.Models.Service.ArtistaService;
+
+import com.usta.galeria.Models.Service.ObraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class ArtistaController {
 
     @Autowired
     private ArtistaService artistaService;
+    @Autowired
+    private ObraService obraService;
 
     @GetMapping("/artistas")
     public String listarArtistas(Model model) {
@@ -40,17 +48,13 @@ public class ArtistaController {
     }
 
 
-    @GetMapping("/editarArtista/{id}")
-    public String editarArtista(@PathVariable("id") Long id, Model model) {
+    @RequestMapping(value= "/detalleArtista/{id}")
+    public String detalleArtista(Model model, @PathVariable (value = "id")Long id){
         ArtistaEntity artista = artistaService.findById(id);
-        if (artista != null) {
-            model.addAttribute("title", "Editar Artista");
-            model.addAttribute("artista", artista);
-            return "artistas/editarArtista";
-
-        }else{
-            return "redirect:/artistas";
-        }
+        Collection<ObraEntity> obras = artista.getObra();
+        model.addAttribute("title","Detalle de Artista");
+        model.addAttribute("detalleArt", artistaService.viewDetail(id));
+        return "artistas/detalleArtista";
     }
 
 

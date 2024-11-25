@@ -14,7 +14,7 @@
 
             <!-- Título de la Exposición -->
             <div class="flex flex-col gap-2 text-start">
-                <label style="font-size:20px; font-family: 'Comic Sans MS', serif" class="text-lg font-bold" for="tituloE">Título *:</label>
+                <label style="font-size:20px; font-family:serif" class="text-lg font-bold" for="tituloE">Título *:</label>
                 <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
                        type="text" name="tituloE" id="tituloE" th:field="*{tituloExp}" required="true"/>
                 <small class="text-bg-white">Digite el título de la exposición</small>
@@ -23,7 +23,7 @@
             <br>
             <!-- Fecha de Inicio -->
             <div class="flex flex-col gap-2 text-start">
-                <label style="font-size:20px; font-family: 'Comic Sans MS',Serif" class="text-lg font-bold" for="fechaI">Fecha de Inicio*:</label>
+                <label style="font-size:20px; font-family:Serif" class="text-lg font-bold" for="fechaI">Fecha de Inicio*:</label>
                 <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
                        type="date" name="fechaI" id="fechaI" th:field="*{fechaInicio}" required="true"/>
                 <small class="text-bg-white">Digite la fecha de Inicio</small>
@@ -37,7 +37,7 @@
             <br>
             <!-- Fecha de Fin -->
             <div class="flex flex-col gap-2 text-start">
-                <label style="font-size:20px; font-family: 'Comic Sans MS',Serif" class="text-lg font-bold" for="fechaF">Fecha de Fin*:</label>
+                <label style="font-size:20px; font-family:Serif" class="text-lg font-bold" for="fechaF">Fecha de Fin*:</label>
                 <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
                        type="date" name="fechaF" id="fechaF" th:field="*{fechaFin}" required="true"/>
                 <small class="text-bg-white">Digite la fecha Fin</small>
@@ -51,7 +51,7 @@
             <br>
             <!-- Ubicación -->
             <div class="flex flex-col gap-2 text-start">
-                <label style="font-size:20px; font-family: 'Comic Sans MS',Serif" class="text-lg font-bold" for="ubicacionE">Ubicación Exposición*:</label>
+                <label style="font-size:20px; font-family:Serif" class="text-lg font-bold" for="ubicacionE">Ubicación Exposición*:</label>
                 <input class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
                        type="text" name="ubicacionE" id="ubicacionE" th:field="*{ubicacionExp}" required="true"/>
                 <small class="text-bg-white">Digite la Ubicación de la Exposición</small>
@@ -60,7 +60,7 @@
             <br>
             <!-- Artistas -->
             <div class="flex flex-col gap-2 text-start">
-                <label style="font-size: 20px; font-family: 'Comic Sans MS', serif" class="text-lg font-bold" for="artistas"> Seleccionar Artistas: </label>
+                <label style="font-size: 20px; font-family: serif" class="text-lg font-bold" for="artistas"> Seleccionar Artistas: </label>
                 <select class="bg-transparent py-1 border-b border-sky-300 focus:border-sky-200 transition-all focus:scale-105 focus:font-normal"
                         id="artistas" name="artistas" th:field="*{artistas}" multiple="multiple">
                     <option th:each="artista: ${listaArtista}"
@@ -75,9 +75,9 @@
             <br>
             <!-- Botón de Enviar -->
             <div class="flex flex-col justify-center items-center mb-4">
-                <button class="border border-orange-600 py-2 px-4
-                    rounded bg-orange-200 hover:bg-orange-600
-                    hover:text-black transition-all active:scale-105
+                <button class="border border-white py-2 px-4
+                    rounded bg-white hover:bg-slate-900 hover:border-white text-white
+                    hover:text-white transition-all active:scale-105
                     font-bold text-lg text-black"
                         type="submit">Actualizar Exposición</button>
             </div>

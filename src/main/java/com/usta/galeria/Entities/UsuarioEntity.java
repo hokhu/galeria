@@ -50,7 +50,7 @@ public class UsuarioEntity implements Serializable {
 
     @NotNull
     @JoinColumn(name = "id_Rol", referencedColumnName = "id_Rol")
-    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private RolEntity idRol;
 

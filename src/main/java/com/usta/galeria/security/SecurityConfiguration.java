@@ -34,7 +34,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/crearArtista", "/eliminarArtista/", "/crearObra", "/editarObra/", "/eliminarObra/", "/crearExposicion", "/detalleExposicion/", "/editarExposicion/", "/exposicion")
                         .hasRole("ADMINISTRADOR")
-                        .requestMatchers( "/artista","/detalleArtista/", "/obra", "/detalleObra/")
+                        .requestMatchers( "/artista","/detalleArtista/", "/obra", "/detalleObra/","/exposiciones","detalleExposicion/")
                         .hasAnyRole("ADMINISTRADOR", "VISITANTE")
                         .anyRequest()
                         .permitAll())

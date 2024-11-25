@@ -24,7 +24,7 @@
                     hover:bg-white hover:text-slate-900">Ver Más</a>
 
                 <a th:href="@{/editarExposicion/{id}(id=${exposicion.idExposicion})}" class="bg-slate-900 text-white rounded-xl p-2
-                    hover:bg-white hover:text-slate-900">Editar</a>
+                    hover:bg-white hover:text-slate-900" sec:authorize="hasAnyRole('ADMINISTRADOR')">Editar</a>
             </div>
 
             <section class="border flex flex-col rounded-xl p-4 gap-4 w-full">

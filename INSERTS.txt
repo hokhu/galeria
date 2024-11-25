@@ -1,0 +1,34 @@
+*** INSERTS ***
+
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (1, 'Burt', 'Staresmeare', 'fotografia', '1984-11-06', 'Cameroon', true);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (2, 'Bard', 'Marsy', 'fotografia', '1990-04-01', 'China', true);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (3, 'Karylin', 'Wybourne', 'dibujo', '1977-07-29', 'Colombia', true);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (4, 'Hewitt', 'Bolzen', 'pintura', '1998-03-21', 'Russia', true);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (5, 'Kinnie', 'Belverstone', 'dibujo', '1977-09-12', 'Nigeria', true);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (6, 'Wells', 'Markey', 'pintura', '1997-01-12', 'Brazil', false);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (7, 'Dulcia', 'Denholm', 'dibujo', '1999-05-25', 'Canada', true);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (8, 'Dean', 'Munden', 'fotografia', '1981-03-30', 'Iran', true);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (9, 'Rebe', 'Palffrey', 'pintura', '1993-07-25', 'Indonesia', true);
+insert into artistas (id_artista, nombre_art, apellido_art, diciplina_art, fecha_nac, pais_origen_art, estado_art) values (10, 'Brigida', 'Mossop', 'dibujo', '1983-02-20', 'Brazil', false);
+
+___________________________________________________________________________
+
+
+insert into exposicion (id_exposicion, titulo_exp, ubicacion_exp, fecha_inicio, fecha_fin, estado_exposicion) values (1, 'Bionicle 3: Web of Shadows', 'Duy Xuyên', '2024-12-04', '2025-01-04', false);
+insert into exposicion (id_exposicion, titulo_exp, ubicacion_exp, fecha_inicio, fecha_fin, estado_exposicion) values (2, 'Guilty Hearts', 'Santol', '2024-12-12', '2025-01-05', false);
+insert into exposicion (id_exposicion, titulo_exp, ubicacion_exp, fecha_inicio, fecha_fin, estado_exposicion) values (3, 'Beyond the Clouds (Al di là delle nuvole)', 'Naberera', '2024-12-20', '2025-01-02', false);
+insert into exposicion (id_exposicion, titulo_exp, ubicacion_exp, fecha_inicio, fecha_fin, estado_exposicion) values (4, 'Premature', 'Řečany nad Labem', '2024-12-24', '2025-01-05', true);
+insert into exposicion (id_exposicion, titulo_exp, ubicacion_exp, fecha_inicio, fecha_fin, estado_exposicion) values (5, 'Liar Liar', 'Lomboy', '2024-12-06', '2025-01-02', true);
+
+
+_________________________________________________________________________________
+
+insert into obra (id_obra, descripcion_obra, fecha_creacion, estado_obra, tecnica_obra, titulo_obra, foto_obra) values (1, 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis ', '2021-03-10', true, 'aereografia', 'Northeast', '01.jpg');
+insert into obra (id_obra, descripcion_obra, fecha_creacion, estado_obra, tecnica_obra, titulo_obra, foto_obra) values (2, 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', '2015-01-09', false, 'fresco', 'Chipmunk Adventure, The', '03.jpg');
+insert into obra (id_obra, descripcion_obra, fecha_creacion, estado_obra, tecnica_obra, titulo_obra, foto_obra) values (3, 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.', '2004-01-11', true, 'acuarela', 'Passport to Pimlico', '02.jpg');
+insert into obra (id_obra, descripcion_obra, fecha_creacion, estado_obra, tecnica_obra, titulo_obra, foto_obra) values (4, 'Quisque id justo sit amet sapien dignissim vestibulum.', '2003-03-16', false, 'aereografia', 'Legend of the Fist: The Return of Chen Zhen', '04.jgp');
+insert into obra (id_obra, descripcion_obra, fecha_creacion, estado_obra, tecnica_obra, titulo_obra, foto_obra) values (5, 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.', '2008-11-02', false, 'acuarela', 'Wholly Moses', '04.jpg');
+
+____________________________________________________________________________________
+
+

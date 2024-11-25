@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/layout :: head}"></head>
+<body class="bg-slate-700 text-white flex flex-col justify-center items-center h-screen w-screen">
+<div th:replace="~{layout/layout :: fondo}"></div>
+<header th:replace="~{layout/layout :: header}"></header>
+<section class="w-full h-full flex flex-col justify-center items-center gap-4 p-4 text-slate-300 0 pt-32">
+    <h1 class="text-3xl font-bold uppercase mb-6">[[${title}]]</h1>
+    <div class="overflow-y-scroll w-3/5 m-5 p-8">
+        <form th:object="${artista}" th:action="@{crearArtista}" method="post" enctype="multipart/form-data">
 
+            <div class="flex flex-col gap-2 text-start mb-3">
+                <label for="nombreArt" style="font-size: 20px; font-family: Serif" class="text-lg font-bold">Nombre del Artista<span class="text-red-500">*</span> </label>
+                <input type="text" name="nombreArt" id="nombreArt" class="bg-transparent py-1 border-b border-slate-900 focus:border-slate-200 transition-all focus:scale-105 focus:font-normal" maxlength="50" placeholder="Alfonso" th:field="*{nombreArt}" required="required">
+                <small class="text-red-500">Digite el nombre del Artista, recuerda que este campo es único</small>
+            </div>
+            <div class="flex flex-col gap-2 text-start mb-3">
+                <label for="apellidoArt" style="font-size: 20px; font-family: Serif" class="text-lg font-bold">Apellido del Artista<span class="text-red-500">*</span> </label>
+                <input type="text" name="apellidoArt" id="apellidoArt" class="bg-transparent py-1 border-b border-slate-900 focus:border-slate-200
+                transition-all focus:scale-105 focus:font-normal" maxlength="50" placeholder="García" th:field="*{apellidoArt}" required="required">
+                <small class="text-red-500">Digite el apellido del artista, recuerda que este campo es único</small>
+            </div>
+            <div class="flex flex-col gap-2 text-start mb-3">
+                <label for="paisOrigenArt" style="font-size: 20px; font-family: Serif" class="text-lg font-bold">Nacionalidad del Artista<span class="text-red-500">*</span> </label>
+                <input type="text" name="paisOrigenArt" id="paisOrigenArt" class="bg-transparent py-1 border-b border-slate-900 focus:border-slate-200 transition-all
+                 focus:scale-105 focus:font-normal" maxlength="50" placeholder="País" th:field="*{paisOrigenArt}" required="required">
+                <small class="text-red-500">Digite la nacionalidad del artista, recuerda que este campo es único</small>
+            </div>
+            <div class="flex flex-col gap-2 text-start mb-3">
+                <label for="fechaNac" style="font-size: 20px; font-family: Serif" class="text-lg font-bold">Fecha de Nacimiento <span class="text-red-500">*</span></label>
+                <input type="date" name="fechaNac" id="fechaNac" class="bg-transparent py-1 border-b border-sky-900
+                focus:border-sky-200 transition-all focus:scale-105 focus:font-normal" th:field="*{fechaNac}" required="required">
+                <small class="text-red-500">Digite la fecha de Nacimiento</small>
+            </div>
+            <div class="flex flex-col gap-2 text-start mb-3">
+                <input type="submit" class="border border-white  py-2 px-4 rounded bg-white hover:bg-slate-900 hover:text-white
+                transition-all active:scale-105 font-bold text-slate-900" value="Enviar">
+            </div>
+            <script>
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('fecha').setAttribute("max", "01/01/1960");
+            </script>
+
+
+        </form>
+    </div>
+
+</section>
+<footer class="relative" th:replace="~{layout/layout :: footer}"></footer>
 </body>
 </html>
